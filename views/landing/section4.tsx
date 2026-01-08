@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 export const Section4 = () => {
     const containerRef = useRef<HTMLDivElement | null>(null)
-
     useEffect(() => {
         if (!containerRef.current) return
 

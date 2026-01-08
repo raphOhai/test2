@@ -26,8 +26,8 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
         trigger: document.body,
         start: 'top top',
         end: 'bottom bottom',
-        scrub: 1, 
-        invalidateOnRefresh: true, 
+        scrub: 1,
+        invalidateOnRefresh: true,
         onUpdate: (self) => {
 
           const scrollDistance = getScrollDistance()
@@ -36,7 +36,6 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
             y: parallaxY
           })
 
-
           if (blueGradientRef.current) {
             const parallaxYBlue = self.progress * scrollDistance * 0.60
             gsap.set(blueGradientRef.current, {
@@ -44,14 +43,12 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
             })
           }
 
-
           const heroTitle = document.getElementById('hero-title') as HTMLElement
           if (heroTitle) {
 
-            const gradient1Colors = ['#B53EA4', '#FC6F32', '#FF4A59'] 
-            const gradient2Colors = ['#FFD6F9', '#FFCBB4', '#FFBEC3'] 
+            const gradient1Colors = ['#B53EA4', '#FC6F32', '#FF4A59']
+            const gradient2Colors = ['#FFD6F9', '#FFCBB4', '#FFBEC3']
 
-    
             const interpolateColor = (color1: string, color2: string, factor: number): string => {
               const hex1 = color1.replace('#', '')
               const hex2 = color2.replace('#', '')
@@ -72,9 +69,10 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
             }
 
             let transitionFactor = 0
-              if (self.progress >= 0.01 && self.progress <= 0.04) {
+            if (self.progress >= 0.01 && self.progress <= 0.04) {
 
-              transitionFactor = (self.progress - 0.01) / (0.04 - 0.01) 
+              transitionFactor = (self.progress - 0.01) / (0.04 - 0.01)
+              
             } else if (self.progress > 0.04) {
 
               transitionFactor = 1
@@ -82,7 +80,6 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
 
               transitionFactor = 0
             }
-
 
             const interpolatedColors = gradient1Colors.map((color1, index) => {
               return interpolateColor(color1, gradient2Colors[index], transitionFactor)

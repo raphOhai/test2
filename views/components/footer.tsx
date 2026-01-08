@@ -6,9 +6,8 @@ import { Send, X } from 'lucide-react'
 export const Footer = () => {
     return (
         <div
-            className='h-screen relative flex flex-col footer-gradient'
+            className='h-screen relative flex flex-col '
         >
-  =
             <div className='flex-1 flex items-center justify-center z-10'>
                 <h2 className='text-white text-4xl font-semibold text-center'>
                     Join our community and harvest $SALT
@@ -40,10 +39,6 @@ export const Footer = () => {
                         </a>
                     </div>
 
-
-
-
-                  
                     <div className='flex items-center gap-6'>
                         <p  className='text-[#8E8E8E] text-[12px] no-underline hover:no-underline'>
                             Terms of Use

@@ -10,6 +10,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 export const Section5 = () => {
     const moonRef = useRef<HTMLDivElement>(null)
+    const shootingStarRef = useRef<HTMLDivElement>(null)
+    const containerRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         if (!moonRef.current) return
@@ -21,15 +23,53 @@ export const Section5 = () => {
             scrub: 1,
             invalidateOnRefresh: true,
             onUpdate: (self) => {
-                // Calculate parallax based on element's scroll progress
-                // Move moon at 50% of scroll speed (faster than before)
-                // Progress is 0 when element enters, 1 when it exits
-                const parallaxY = self.progress * 200 * 0.50 // 200px max movement at 50% speed
+                const parallaxY = self.progress * 200 * 0.50 
                 gsap.set(moonRef.current, {
                     y: parallaxY
                 })
             },
         })
+
+        if (shootingStarRef.current && containerRef.current) {
+            const viewportHeight = window.innerHeight
+            const viewportWidth = window.innerWidth
+
+            const verticalDistance = viewportHeight + 500
+            const horizontalDistance = verticalDistance
+
+            const startX = -600 
+            const startY = -600 
+
+            const endX = viewportWidth + horizontalDistance
+            const endY = viewportHeight + verticalDistance
+
+            gsap.set(shootingStarRef.current, {
+                x: startX,
+                y: startY,
+                rotation: 25,
+            })
+
+            ScrollTrigger.create({
+                trigger: containerRef.current,
+                start: 'top 80%',
+                end: 'top 20%',
+                onEnter: () => {
+                    gsap.to(shootingStarRef.current, {
+                        x: endX,
+                        y: endY,
+                        duration: 1,
+                        ease: 'power2.in',
+                        rotation: 25,
+                        onComplete: () => {
+                            if (shootingStarRef.current) {
+                                shootingStarRef.current.remove()
+                            }
+                        }
+                    })
+                },
+                once: true,
+            })
+        }
 
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill())
@@ -37,8 +77,11 @@ export const Section5 = () => {
     }, [])
 
     return (
-        <div className='align-center '>
+        <div ref={containerRef} className='align-center relative'>
             <div className='grid grid-cols-2 gap-4'>
+                 <div ref={shootingStarRef} className='pointer-events-none absolute top-0 left-0 z-10'>
+                    <Image src='/shootingStar.png' alt='section5' width={500} height={500} />
+                 </div>
 
                 <div className='flex flex-col gap-4 mt-30'>
                     <h1 className='text-[45px] font-bold text-white text-start leading-[110%]'>

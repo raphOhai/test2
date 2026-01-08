@@ -14,29 +14,27 @@ export const Section2 = () => {
     useEffect(() => {
         if (!containerRef.current || !logosRef.current) return
 
-        // Wait for layout to be ready
+
         setTimeout(() => {
             if (!logosRef.current) return
 
-            // Get the actual width of the logos container
+
             const logosWidth = logosRef.current.scrollWidth
             const containerWidth = containerRef.current?.offsetWidth || window.innerWidth
 
-            // Calculate how much to scroll (logos width minus container width)
-            const scrollAmount = logosWidth - containerWidth + 100 // Add some padding
+            const scrollAmount = logosWidth - containerWidth + 100 
 
-            // Create horizontal scroll animation
             gsap.to(logosRef.current, {
                 x: -scrollAmount,
                 ease: 'none',
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 80%', // Start when section is 80% into viewport
-                    end: 'bottom 20%', // End when section is 20% from bottom of viewport
-                    scrub: 1, // Smooth scrubbing
-                    pin: false, // Don't pin, just scroll the content
+                    start: 'top 80%', 
+                    end: 'bottom 20%', 
+                    scrub: 1, 
+                    pin: false,
                     invalidateOnRefresh: true,
-                    markers: false, // Set to true for debugging
+                    markers: false,
                 }
             })
         }, 100)
@@ -46,7 +44,7 @@ export const Section2 = () => {
         }
     }, [])
     return (
-        <div ref={containerRef} className='flex flex-col gap-8 py-16'>
+        <div ref={containerRef} className=''>
             <h1 className='text-[30px] font-bold text-white leading-[110%] text-center'>
                 Projects integrated into the Arrakis AI Ecosystem
             </h1>

@@ -9,6 +9,7 @@ import { MobileWarning } from "@/components/MobileWarning";
 
 export default function Page() {
     return <>
+
         <section className="snap-section">
             <Hero />
         </section>

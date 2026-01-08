@@ -7,6 +7,7 @@ import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Lenis from 'lenis'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,14 +16,61 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const planetRef = useRef<HTMLDivElement>(null)
   const redGradientRef = useRef<HTMLDivElement>(null)
   const blueGradientRef = useRef<HTMLDivElement>(null)
+  const lenisRef = useRef<Lenis | null>(null)
+  const rafIdRef = useRef<number | null>(null)
 
   useEffect(() => {
+    // Initialize Lenis with smooth scroll settings
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
+    })
+
+    lenisRef.current = lenis
+
+    // Integrate Lenis with ScrollTrigger - this will be called in the raf loop
+    // Animation loop for Lenis
+    function raf(time: number) {
+      lenis.raf(time)
+      ScrollTrigger.update()
+      rafIdRef.current = requestAnimationFrame(raf)
+    }
+
+    rafIdRef.current = requestAnimationFrame(raf)
+
+    // Setup ScrollTrigger with Lenis integration
     if (planetRef.current) {
+
+      ScrollTrigger.scrollerProxy(document.body, {
+        scrollTop(value?: number) {
+          if (value !== undefined) {
+            lenis.scrollTo(value, { immediate: true })
+          }
+          return lenis.scroll
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight,
+          }
+        },
+        pinType: document.body.style.transform ? 'transform' : 'fixed',
+      })
+
       const getScrollDistance = () => {
         return Math.max(document.documentElement.scrollHeight - window.innerHeight, 0)
       }
 
       ScrollTrigger.create({
+        scroller: document.body,
         trigger: document.body,
         start: 'top top',
         end: 'bottom bottom',
@@ -99,8 +147,17 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
         }
       })
     }
+
+    // Cleanup
     return () => {
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current)
+        rafIdRef.current = null
+      }
+      lenis.destroy()
+      lenisRef.current = null
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+      ScrollTrigger.scrollerProxy(document.body, {})
     }
   }, [])
 

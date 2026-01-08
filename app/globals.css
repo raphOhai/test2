@@ -125,13 +125,23 @@
   }
 
   html {
-    scroll-snap-type: both mandatory;
+    /* Disable CSS scroll-snap when using Lenis for smooth scrolling */
+    /* scroll-snap-type: y mandatory; */
+    scroll-behavior: auto; /* Let Lenis handle smooth scrolling */
+    overflow: hidden; /* Let Lenis handle scrolling */
   }
 
-  section {
+  body {
+    overflow-y: hidden; /* Let Lenis handle scrolling */
+    overflow-x: hidden;
+  }
+
+  section,
+  .snap-section {
+    min-height: 100vh;
     height: 100vh;
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    /* scroll-snap-align: start; */
+    /* scroll-snap-stop: always; */
   }
 }
 

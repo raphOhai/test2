@@ -80,7 +80,7 @@ export const Section5 = () => {
         <div ref={containerRef} className='align-center relative'>
             <div className='grid grid-cols-2 gap-4'>
                  <div ref={shootingStarRef} className='pointer-events-none absolute top-0 left-0 z-10'>
-                    <Image src='/shootingStar.png' alt='section5' width={500} height={500} />
+                    <Image src='/shootingStar.webp' alt='section5' width={500} height={500} />
                  </div>
 
                 <div className='flex flex-col gap-4 mt-30'>
@@ -101,7 +101,7 @@ export const Section5 = () => {
                 </div>
 
                 <div ref={moonRef} className='flex justify-end'>
-                    <Image src='/moon.png' alt='section5' width={500} height={500} />
+                    <Image src='/moon.webp' alt='section5' width={500} height={500} />
                 </div>
 
             </div>

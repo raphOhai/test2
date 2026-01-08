@@ -32,10 +32,10 @@ export const Footer = () => {
 
                     <div className='flex items-center gap-4'>
                         <a href='#' className='text-white hover:opacity-80 transition-opacity'>
-                            <Image src='/telegram.png' alt='twitter' width={20} height={20} />
+                            <Image src='/telegram.webp' alt='twitter' width={20} height={20} />
                         </a>
                         <a href='#' className='text-white hover:opacity-80 transition-opacity'>
-                            <Image src='/twitter.png' alt='x' width={20} height={20} />
+                            <Image src='/twitter.webp' alt='x' width={20} height={20} />
                         </a>
                     </div>
 
@@ -53,7 +53,7 @@ export const Footer = () => {
                 </div>
             </div>
 
-            <Image src='/footer.png' alt='footer' width={1000} height={1000}
+            <Image src='/footer.webp' alt='footer' width={1000} height={1000}
                 className='w-full bottom-0 left-0 z-0 absolute' />
         </div>
     )

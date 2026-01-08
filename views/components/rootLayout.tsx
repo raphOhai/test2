@@ -72,7 +72,7 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
             if (self.progress >= 0.01 && self.progress <= 0.04) {
 
               transitionFactor = (self.progress - 0.01) / (0.04 - 0.01)
-              
+
             } else if (self.progress > 0.04) {
 
               transitionFactor = 1
@@ -114,7 +114,7 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       <div ref={planetRef} className='absolute top-0 right-[-10px] pointer-events-none' style={{ transform: 'translateZ(0)' }}>
-        <Image src='/planet2.png' alt='footer' width={700} height={700} />
+        <Image src='/planet2.webp' alt='footer' width={700} height={700} />
       </div>
       <div className='max-w-7xl mx-auto relative z-10'>
         <Header />

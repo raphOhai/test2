@@ -51,56 +51,56 @@ export const Section2 = () => {
             <div className='relative overflow-hidden'>
                 <div ref={logosRef} className='flex gap-6 px-4'>
                     <Image
-                        src='/logos/Frame.png'
+                        src='/logos/Frame.webp'
                         alt='project1'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/Group.png'
+                        src='/logos/Group.webp'
                         alt='project2'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/red.png'
+                        src='/logos/red.webp'
                         alt='project3'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/solana.png'
+                        src='/logos/solana.webp'
                         alt='project4'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/Frame.png'
+                        src='/logos/Frame.webp'
                         alt='project1'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/Group.png'
+                        src='/logos/Group.webp'
                         alt='project2'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/red.png'
+                        src='/logos/red.webp'
                         alt='project3'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/solana.png'
+                        src='/logos/solana.webp'
                         alt='project4'
                         width={80}
                         height={80}
@@ -108,70 +108,70 @@ export const Section2 = () => {
                     />
 
                     <Image
-                        src='/logos/solana.png'
+                        src='/logos/solana.webp'
                         alt='project4'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/Frame.png'
+                        src='/logos/Frame.webp'
                         alt='project1'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/Group.png'
+                        src='/logos/Group.webp'
                         alt='project2'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/red.png'
+                        src='/logos/red.webp'
                         alt='project3'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/solana.png'
+                        src='/logos/solana.webp'
                         alt='project4'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/solana.png'
+                        src='/logos/solana.webp'
                         alt='project4'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/Frame.png'
+                        src='/logos/Frame.webp'
                         alt='project1'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/Group.png'
+                        src='/logos/Group.webp'
                         alt='project2'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/red.png'
+                        src='/logos/red.webp'
                         alt='project3'
                         width={80}
                         height={80}
                         className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/solana.png'
+                        src='/logos/solana.webp'
                         alt='project4'
                         width={80}
                         height={80}

@@ -3,11 +3,13 @@ import { Section2 } from "@/views/landing/section2";
 import { HeroSection3 } from "@/views/landing/section3";
 import { Section4 } from "@/views/landing/section4";
 import { Section5 } from "@/views/landing/section5";
+import { MobileWarning } from "@/components/MobileWarning";
 
 
 
 export default function Page() {
     return <>
+        <MobileWarning />
         <section className="snap-section">
             <Hero />
         </section>

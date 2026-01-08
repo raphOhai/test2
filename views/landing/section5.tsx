@@ -46,19 +46,19 @@ export const Section5 = () => {
             const viewportHeight = window.innerHeight
             const viewportWidth = window.innerWidth
 
-            const verticalDistance = viewportHeight + 500
-            const horizontalDistance = verticalDistance
 
-            const startX = -1000 
-            const startY = -1000 
+            const horizontalDistance = viewportHeight
+            const endX = viewportWidth * 0.7 
+            const endY = viewportHeight * 0.9
 
-            const endX = viewportWidth + horizontalDistance
-            const endY = viewportHeight + verticalDistance
+            const startX = -750
+            const startY = -750;    
 
             gsap.set(shootingStarRef.current, {
                 x: startX,
                 y: startY,
                 rotation: 10,
+                opacity: 1,
             })
 
             ScrollTrigger.create({
@@ -66,20 +66,20 @@ export const Section5 = () => {
                 start: 'top 80%',
                 end: 'top 20%',
                 onEnter: () => {
-                    gsap.to(shootingStarRef.current, {
+                    const tl = gsap.timeline()
+                
+                    tl.to(shootingStarRef.current, {
                         x: endX,
                         y: endY,
-                        duration: 3,
+                        duration: 2,
                         ease: 'power2.in',
                         rotation: 10,
-                        onComplete: () => {
-                            setTimeout(() => {
-                                if (shootingStarRef.current) {
-                                    shootingStarRef.current.remove()
-                                }
-                            }, 200) 
-                        }
                     })
+                    .to(shootingStarRef.current, {
+                        opacity: 0,
+                        duration: 0.8,
+                        ease: 'power2.out',
+                    }, '-=0.1') 
                 },
                 once: true,
             })

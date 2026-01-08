@@ -3,26 +3,36 @@
 import { useEffect, useState } from 'react'
 
 export const MobileWarning = () => {
-    const [isMobile, setIsMobile] = useState(false) // Default to true to show warning initially
+    const [showWarning, setShowWarning] = useState(true)
 
     useEffect(() => {
         const checkMobile = () => {
-            const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera
-            const isMobileDevice = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())
-            const isSmallScreen = window.innerWidth < 768
+            if (typeof window === 'undefined') return
             
-            setIsMobile(isMobileDevice || isSmallScreen)
+            const width = window.innerWidth
+            const height = window.innerHeight
+            const isSmallScreen = width < 768 || height < 600
+            
+            setShowWarning(isSmallScreen)
         }
 
+        // Check immediately
         checkMobile()
+        
+        // Also check after a small delay to catch any timing issues
+        const timeoutId = setTimeout(checkMobile, 100)
+        
         window.addEventListener('resize', checkMobile)
+        window.addEventListener('orientationchange', checkMobile)
 
         return () => {
+            clearTimeout(timeoutId)
             window.removeEventListener('resize', checkMobile)
+            window.removeEventListener('orientationchange', checkMobile)
         }
     }, [])
 
-    if (!isMobile) return null
+    if (!showWarning) return null
 
     return (
         <div className="fixed inset-0 z-[9999] bg-black flex items-center justify-center p-8">

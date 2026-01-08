@@ -5,13 +5,25 @@ import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export const Section5 = () => {
     const moonRef = useRef<HTMLDivElement>(null)
     const shootingStarRef = useRef<HTMLDivElement>(null)
-    const containerRef = useRef<HTMLDivElement>(null)
+    const containerRef = useScrollAnimation({
+        selector: '.section5-animate',
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.2,
+        force3D: false,
+        triggerStart: 'top 80%',
+        toggleActions: 'play none none reverse',
+    })
+
 
     useEffect(() => {
         if (!moonRef.current) return
@@ -20,10 +32,10 @@ export const Section5 = () => {
             trigger: moonRef.current,
             start: 'top bottom',
             end: 'bottom top',
-            scrub: 1,
+            scrub:3,
             invalidateOnRefresh: true,
             onUpdate: (self) => {
-                const parallaxY = self.progress * 200 * 0.50 
+                const parallaxY = self.progress * 400
                 gsap.set(moonRef.current, {
                     y: parallaxY
                 })
@@ -61,9 +73,11 @@ export const Section5 = () => {
                         ease: 'power2.in',
                         rotation: 10,
                         onComplete: () => {
-                            if (shootingStarRef.current) {
-                                shootingStarRef.current.remove()
-                            }
+                            setTimeout(() => {
+                                if (shootingStarRef.current) {
+                                    shootingStarRef.current.remove()
+                                }
+                            }, 200) 
                         }
                     })
                 },
@@ -84,15 +98,15 @@ export const Section5 = () => {
                  </div>
 
                 <div className='flex flex-col gap-4 mt-30'>
-                    <h1 className='text-[45px] font-bold text-white text-start leading-[110%]'>
+                    <h1 className='section5-animate text-[45px] font-bold text-white text-start leading-[110%]'>
                         Text here
                     </h1>
 
-                    <p className='text-lg font-400 text-white text-start w-[90%]'>
+                    <p className='section5-animate text-lg font-400 text-white text-start w-[90%]'>
                         Every month, we run a competition between all the AI models submitted on a leaderboard. The best model will be featured and will earn tokens.
                     </p>
 
-                    <div>
+                    <div className='section5-animate'>
                         <Button borderStyle='gradient' className='rounded-[95px] ' size='lg'>
                             Read Whitepaper
                         </Button>

@@ -1,38 +1,20 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import React, { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export const HeroSection3 = () => {
-    const containerRef = useRef<HTMLDivElement | null>(null)
-
-    useEffect(() => {
-        if (!containerRef.current) return
-
-        const elements = containerRef.current.querySelectorAll('.section3-animate')
-
-        gsap.from(elements, {
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-            stagger: 0.2,
-            force3D: false,
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: 'top 80%',
-                toggleActions: 'play none none reverse',
-            },
-        })
-
-        return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-        }
-    }, [])
+    const containerRef = useScrollAnimation({
+        selector: '.section3-animate',
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.2,
+        force3D: false,
+        triggerStart: 'top 80%',
+        toggleActions: 'play none none reverse',
+    })
 
     return (
         <div ref={containerRef} className='w-[70%] space-y-4'>

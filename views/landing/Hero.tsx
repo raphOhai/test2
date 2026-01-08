@@ -12,20 +12,16 @@ export const Hero = () => {
 
     useEffect(() => {
         if (pillsRef.current.length === 0) return
-
-        // Set initial state - pills hidden and slightly below
         gsap.set(pillsRef.current, {
             y: 50,
             opacity: 0
         })
 
-        // Create staggered slide-in animation triggered at 2% scroll
         ScrollTrigger.create({
             trigger: document.body,
-            start: 'top+=2%', // Trigger at 2% from top
+            start: 'top+=2%', 
             end: 'bottom bottom',
             onEnter: () => {
-                // Create timeline for staggered animation
                 const tl = gsap.timeline()
 
                 tl.to(pillsRef.current, {
@@ -33,10 +29,10 @@ export const Hero = () => {
                     opacity: 1,
                     duration: 0.5,
                     ease: 'power2.out',
-                    stagger: 0.15, // Stagger each pill by 0.15s
+                    stagger: 0.15,
                 })
             },
-            once: true, // Only trigger once
+            once: true,
         })
 
         return () => {

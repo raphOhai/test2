@@ -16,11 +16,6 @@ export default function Page() {
             <HeroSection3 />
         </section>
 
-{/* 
-
-            <Section2 /> */}
-
-
         <section className="snap-section">
             <Section4 />
         </section>

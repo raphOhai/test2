@@ -37,8 +37,8 @@ export const Section5 = () => {
             const verticalDistance = viewportHeight + 500
             const horizontalDistance = verticalDistance
 
-            const startX = -600 
-            const startY = -600 
+            const startX = -1500 
+            const startY = -1500 
 
             const endX = viewportWidth + horizontalDistance
             const endY = viewportHeight + verticalDistance
@@ -57,7 +57,7 @@ export const Section5 = () => {
                     gsap.to(shootingStarRef.current, {
                         x: endX,
                         y: endY,
-                        duration: 1,
+                        duration: 2,
                         ease: 'power2.in',
                         rotation: 25,
                         onComplete: () => {

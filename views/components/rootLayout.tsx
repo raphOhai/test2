@@ -109,7 +109,7 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <div ref={blueGradientRef} className='absolute top-0 left-20 '>
         <BlueGradient />
       </div>
-      <div ref={redGradientRef} className='fixed pointer-events-none top-0 left-[-20%] scale-90' >
+      <div ref={redGradientRef} className='fixed pointer-events-none bottom-[-100px] left-[-20%] scale-90' >
         <RedGradinet />
       </div>
 

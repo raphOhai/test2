@@ -1,9 +1,30 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 
 export const RedGradinet = () => {
+    const glowRef = useRef<SVGGElement>(null)
+
+    useEffect(() => {
+        if (!glowRef.current) return
+        gsap.set(glowRef.current, { opacity: 0.4 })
+        gsap.to(glowRef.current, {
+            opacity: 0.9,
+            duration: 3,
+            ease: 'sine.inOut',
+            repeat: -1,
+            yoyo: true
+        })
+
+        return () => {
+            gsap.killTweensOf(glowRef.current)
+        }
+    }, [])
+
     return (
         <svg width="1100" height="881" viewBox="0 0 1100 881" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.7" filter="url(#filter0_f_455_8512)">
+            <g ref={glowRef} filter="url(#filter0_f_455_8512)">
                 <path d="M433.931 634.915C269.476 666.469 105.686 506.959 264.864 295.956C424.043 84.9533 726.12 268.838 724.77 400.421C723.42 532.004 939.313 555.902 893.557 726.655C851.726 882.764 641.03 1066.26 579.707 879.61C529.299 726.178 598.386 603.361 433.931 634.915Z" fill="url(#paint0_linear_455_8512)" fill-opacity="0.2" />
             </g>
             <defs>

@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { ArrowUpIcon } from 'lucide-react'
 import React from 'react'
 
 interface Model {
@@ -171,11 +172,11 @@ export const LeaderboardTable = () => {
                                         <span className='text-gray-500'>-</span>
                                     )}
 
-                           
+
                                 </div>
                             </TableCell>
                             <TableCell className='!text-[10px] whitespace-nowrap font-medium text-white py-4'>
-                            {model.rank} {".   "}
+                                {model.rank} {".   "}
                                 {model.name}
                             </TableCell>
                             <TableCell className='!text-[10px] whitespace-nowrap text-white py-4'>
@@ -206,11 +207,20 @@ export const LeaderboardTable = () => {
                     ))}
                 </TableBody>
             </Table>
-            <div className="flex justify-end">
+            <div className="flex  justify-end items-center">
                 <Button variant='link' className='rounded-[95px] ' >
-                    View all models
+                    View full leaderboard
                 </Button>
-            
+
+                <div className='flex rounded-full border border-white p-2'>
+                    <ArrowUpIcon
+                        className='w-4 h-4 text-white'
+                    />
+
+                </div>
+
+
+
             </div>
         </div>
     )

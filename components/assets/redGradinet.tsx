@@ -1,26 +1,15 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
+import React from 'react'
+import { usePulsingGlow } from '@/hooks/usePulsingGlow'
 
 export const RedGradinet = () => {
-    const glowRef = useRef<SVGGElement>(null)
-
-    useEffect(() => {
-        if (!glowRef.current) return
-        gsap.set(glowRef.current, { opacity: 0.4 })
-        gsap.to(glowRef.current, {
-            opacity: 0.9,
-            duration: 3,
-            ease: 'sine.inOut',
-            repeat: -1,
-            yoyo: true
-        })
-
-        return () => {
-            gsap.killTweensOf(glowRef.current)
-        }
-    }, [])
+    const glowRef = usePulsingGlow<SVGGElement>({
+        minOpacity: 0.4,
+        maxOpacity: 0.9,
+        duration: 3,
+        ease: 'sine.inOut',
+    })
 
     return (
         <svg width="1100" height="881" viewBox="0 0 1100 881" fill="none" xmlns="http://www.w3.org/2000/svg">

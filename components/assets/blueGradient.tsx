@@ -1,9 +1,16 @@
+import { usePulsingGlow } from '@/hooks/usePulsingGlow'
 import React from 'react'
 
 const BlueGradient = () => {
+    const glowRef = usePulsingGlow<SVGGElement>({
+        minOpacity: 0.4,
+        maxOpacity: 0.9,
+        duration: 3,
+        ease: 'sine.inOut',
+    })
     return (
         <svg width="1195" height="684" viewBox="0 0 1195 684" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_f_352_6491)">
+            <g ref={glowRef} filter="url(#filter0_f_352_6491)">
                 <path d="M626.724 287.806C622.691 455.212 432.079 581.457 259.625 381.158C87.1706 180.86 330.924 -75.36 459.229 -46.1408C587.535 -16.9216 656.665 -222.838 813.834 -141.918C957.524 -67.9375 1092.18 176.876 896.765 197.228C736.134 213.957 630.757 120.399 626.724 287.806Z" fill="url(#paint0_linear_352_6491)" fill-opacity="0.2" />
             </g>
             <defs>

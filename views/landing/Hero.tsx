@@ -65,13 +65,13 @@ export const Hero = () => {
             </div>
 
             <div className='grid grid-cols-12 gap-4 mt-20'>
-                <div className='col-span-4' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
+                <div className='col-span-4 opacity-0' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
                     <StatsPill title='LLM models' value='1,873' />
                 </div>
-                <div className='col-span-4' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
+                <div className='col-span-4 opacity-0' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
                     <StatsPill title='Paid to data scientists' value='$326,734' />
                 </div>
-                <div className='col-span-4' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
+                <div className='col-span-4 opacity-0' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
                     <StatsPill title='Developers' value='6,557' />
                 </div>
             </div>

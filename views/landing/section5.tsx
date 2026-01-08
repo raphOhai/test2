@@ -37,8 +37,8 @@ export const Section5 = () => {
             const verticalDistance = viewportHeight + 500
             const horizontalDistance = verticalDistance
 
-            const startX = -1500 
-            const startY = -1500 
+            const startX = -1000 
+            const startY = -1000 
 
             const endX = viewportWidth + horizontalDistance
             const endY = viewportHeight + verticalDistance
@@ -46,7 +46,7 @@ export const Section5 = () => {
             gsap.set(shootingStarRef.current, {
                 x: startX,
                 y: startY,
-                rotation: 25,
+                rotation: 10,
             })
 
             ScrollTrigger.create({
@@ -57,9 +57,9 @@ export const Section5 = () => {
                     gsap.to(shootingStarRef.current, {
                         x: endX,
                         y: endY,
-                        duration: 2,
+                        duration: 3,
                         ease: 'power2.in',
-                        rotation: 25,
+                        rotation: 10,
                         onComplete: () => {
                             if (shootingStarRef.current) {
                                 shootingStarRef.current.remove()

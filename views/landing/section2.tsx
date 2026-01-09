@@ -45,11 +45,11 @@ export const Section2 = () => {
     }, [])
     return (
         <div ref={containerRef} className=''>
-            <h1 className='text-[30px] font-bold text-white leading-[110%] text-center'>
+            <h1 className='text-[20px] font-bold text-white leading-[120%] text-center lg:text-[30px] lg:leading-[110%]'>
                 Projects integrated into the Arrakis AI Ecosystem
             </h1>
-            <div className='relative overflow-hidden'>
-                <div ref={logosRef} className='flex gap-6 px-4'>
+            <div className='relative overflow-hidden mt-4 lg:mt-0'>
+                <div ref={logosRef} className='flex gap-3 px-2 lg:gap-6 lg:px-4'>
                     <Image
                         src='/logos/Frame.webp'
                         alt='project1'

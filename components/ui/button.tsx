@@ -13,8 +13,8 @@ const buttonVariants = cva(
         link: "text-white underline-offset-4 hover:bg-gradient-to-r hover:from-[#B53EA4] hover:via-[#FC6F32] hover:to-[#FF4A59] hover:bg-clip-text hover:text-transparent",
       },
       size: {
-        default: "px-6 py-2",
-        lg: "px-8 py-3 text-lg",
+        default: "px-4 py-1.5 lg:px-6 lg:py-2",
+        lg: "px-4 py-2 text-sm lg:px-8 lg:py-3 lg:text-lg",
         icon: "size-9",
         "icon-xs": "size-6 rounded-[min(var(--radius-md),8px)] in-data-[slot=button-group]:rounded-md [&_svg:not([class*='size-'])]:size-3",
         "icon-sm": "size-8 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-md",

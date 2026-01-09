@@ -45,29 +45,29 @@ export const Hero = () => {
     }, [])
     return (
         <div className='w-full'>
-            <h1 id='hero-title' className='font-semibold angle-gradient hero-title text-[95px] leading-[110%] mt-30 tracking-[-3%] transition-all'>
+            <h1 id='hero-title' className='font-semibold angle-gradient hero-title text-[32px] leading-[120%] mt-8 tracking-[-2%] text-center lg:text-[95px] lg:leading-[110%] lg:mt-30 lg:tracking-[-3%] lg:text-start transition-all'>
                 A new economic primitive for funding decentralized AI
             </h1>
-            <p className='text-lg font-400 text-white mt-4'>
+            <p className='text-sm font-400 text-white mt-3 text-center lg:text-lg lg:mt-4 lg:text-start'>
                 We track, rank and pay for the best open source decentralized LLMs to compete against OpenAI
             </p>
-            <div className='mt-8'>
-                <Button borderStyle='gradient' className='rounded-[95px]' size='lg' >
+            <div className='mt-6 flex flex-row gap-2 items-center justify-center lg:mt-8 lg:gap-0 lg:justify-start'>
+                <Button borderStyle='gradient' className='rounded-[95px] flex-1 lg:flex-none' size='lg' >
                     Buy salt ai
                 </Button>
-                <Button variant='link' className='text-white'>
+                <Button variant='link' className='text-white whitespace-nowrap'>
                     Learn more
                 </Button>
             </div>
 
-            <div className='grid grid-cols-12 gap-4 mt-20'>
-                <div className='col-span-4 opacity-0' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
+            <div className='grid grid-cols-1 gap-4 mt-12 lg:grid-cols-12 lg:mt-20'>
+                <div className='lg:col-span-4 opacity-0' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
                     <StatsPill title='LLM models' value='1,873' />
                 </div>
-                <div className='col-span-4 opacity-0' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
+                <div className='lg:col-span-4 opacity-0' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
                     <StatsPill title='Paid to data scientists' value='$326,734' />
                 </div>
-                <div className='col-span-4 opacity-0' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
+                <div className='lg:col-span-4 opacity-0' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
                     <StatsPill title='Developers' value='6,557' />
                 </div>
             </div>
@@ -77,11 +77,11 @@ export const Hero = () => {
 
 const StatsPill = ({ title, value }: { title: string, value: string }) => {
     return (
-        <div className='rounded-[95px] px-8 py-4 flex flex-col gap-1 align-center justify-center bg-gradient-to-r from-[#B53EA4]/20 via-[#FC6F32]/20 to-[#FF4A59]/20'>
-            <p className='text-[45px] font-bold text-white text-center'>
+        <div className='rounded-[95px] px-4 py-3 flex flex-col gap-1 align-center justify-center bg-gradient-to-r from-[#B53EA4]/20 via-[#FC6F32]/20 to-[#FF4A59]/20 lg:px-8 lg:py-4'>
+            <p className='text-[28px] font-bold text-white text-center lg:text-[45px]'>
                 {value}
             </p>
-            <p className='text-[15px] font-400 text-white text-center'>
+            <p className='text-[13px] font-400 text-white text-center lg:text-[15px]'>
                 {title}
             </p>
         </div>

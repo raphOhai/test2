@@ -28,7 +28,7 @@ export const Footer = () => {
                 <div className='w-full h-[1px] bg-[#8E8E8E] mb-6 lg:mb-8'></div>
 
              
-                <div className='mx-auto px-4 flex flex-col gap-4 items-center lg:flex-row lg:items-center lg:justify-between'>
+                <div className='mx-auto px-4 flex flex-row items-center justify-between'>
 
                     <div className='flex items-center gap-4'>
                         <a href='#' className='text-white hover:opacity-80 transition-opacity'>
@@ -39,7 +39,7 @@ export const Footer = () => {
                         </a>
                     </div>
 
-                    <div className='flex flex-col items-center gap-3 lg:flex-row lg:items-center lg:gap-6'>
+                    <div className='flex flex-row items-center gap-2'>
                         <p  className='text-[#8E8E8E] text-[12px] no-underline hover:no-underline'>
                             Terms of Use
                         </p>

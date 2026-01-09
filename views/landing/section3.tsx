@@ -2,8 +2,15 @@
 
 import { Button } from '@/components/ui/button'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+import Image from 'next/image'
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export const HeroSection3 = () => {
+    const shootingStarRef = useRef<HTMLDivElement>(null)
     const containerRef = useScrollAnimation({
         selector: '.section3-animate',
         y: 40,
@@ -16,8 +23,72 @@ export const HeroSection3 = () => {
         toggleActions: 'play none none reverse',
     })
 
+    useEffect(() => {
+        if (shootingStarRef.current && containerRef.current) {
+            const isMobile = window.innerWidth < 1024
+            if (isMobile) return
+
+            const viewportHeight = window.innerHeight
+            const viewportWidth = window.innerWidth
+
+            const endX = viewportWidth * 1
+            const endY = viewportHeight * 1
+
+            const startX = -750
+            const startY = -750;
+
+            gsap.set(shootingStarRef.current, {
+                x: startX,
+                y: startY,
+                rotation: 10,
+                opacity: 1,
+            })
+
+            ScrollTrigger.create({
+                trigger: containerRef.current,
+                start: 'top 80%',
+                onEnter: () => {
+                    const tl = gsap.timeline()
+
+                    tl.to(shootingStarRef.current, {
+                        x: endX,
+                        y: endY,
+                        duration: 1,
+                        ease: 'power2.in',
+                        rotation: 10,
+                    }).to(
+                        shootingStarRef.current,
+                        {
+                            opacity: 0,
+                            duration: 0.8,
+                            ease: 'power2.out',
+                        },
+                        '-=0.1'
+                    )
+                },
+                once: true,
+            })
+        }
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+        }
+    }, [])
+
     return (
-        <div ref={containerRef} className='w-full grid grid-cols-12 gap-4'>
+        <div ref={containerRef} className='w-full grid grid-cols-12 gap-4 relative'>
+            {/* Shooting star is rendered in a fixed, overflow-hidden layer so it doesn't affect page scroll */}
+            <div className='pointer-events-none fixed inset-0 z-10 overflow-hidden'>
+                <div ref={shootingStarRef} className='absolute top-[-100px] left-0'>
+                    <Image
+                        src='/shootingStar.webp'
+                        alt='section3'
+                        width={500}
+                        height={500}
+                        className='w-32 h-32 lg:w-auto lg:h-auto'
+                    />
+                </div>
+            </div>
             <div className='col-span-12 lg:col-span-8 space-y-3  lg:space-y-4 '>
                 <h2 className='section3-animate text-[24px] font-bold text-white text-start leading-[120%] lg:text-[45px] lg:leading-[110%]'>
                     Crowdsourcing our collective intelligence to build the best AI

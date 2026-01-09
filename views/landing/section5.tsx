@@ -36,7 +36,7 @@ export const Section5 = () => {
             trigger: moonRef.current,
             start: 'top bottom',
             end: 'bottom top',
-            scrub:3,
+            scrub: 3,
             invalidateOnRefresh: true,
             onUpdate: (self) => {
                 const parallaxY = self.progress * 400
@@ -56,11 +56,11 @@ export const Section5 = () => {
 
 
             const horizontalDistance = viewportHeight
-            const endX = viewportWidth * 0.7 
+            const endX = viewportWidth * 0.7
             const endY = viewportHeight * 0.9
 
             const startX = -750
-            const startY = -750;    
+            const startY = -750;
 
             gsap.set(shootingStarRef.current, {
                 x: startX,
@@ -75,7 +75,7 @@ export const Section5 = () => {
                 end: 'top 20%',
                 onEnter: () => {
                     const tl = gsap.timeline()
-                
+
                     tl.to(shootingStarRef.current, {
                         x: endX,
                         y: endY,
@@ -83,11 +83,11 @@ export const Section5 = () => {
                         ease: 'power2.in',
                         rotation: 10,
                     })
-                    .to(shootingStarRef.current, {
-                        opacity: 0,
-                        duration: 0.8,
-                        ease: 'power2.out',
-                    }, '-=0.1') 
+                        .to(shootingStarRef.current, {
+                            opacity: 0,
+                            duration: 0.8,
+                            ease: 'power2.out',
+                        }, '-=0.1')
                 },
                 once: true,
             })
@@ -101,23 +101,28 @@ export const Section5 = () => {
     return (
         <div ref={containerRef} className='align-center relative'>
             <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4'>
-                 <div ref={shootingStarRef} className='pointer-events-none absolute top-0 left-0 z-10'>
+                <div ref={shootingStarRef} className='pointer-events-none absolute top-[-100px] left-0 z-10'>
                     <Image src='/shootingStar.webp' alt='section5' width={500} height={500} className='w-32 h-32 lg:w-auto lg:h-auto' />
-                 </div>
+                </div>
 
                 <div className='flex flex-col gap-3 mt-8 lg:gap-4 lg:mt-30'>
                     <h1 className='section5-animate text-[24px] font-bold text-white text-start leading-[120%] lg:text-[45px] lg:leading-[110%]'>
-                        Text here
+                        Join our community
                     </h1>
 
                     <p className='section5-animate text-sm font-400 text-white text-start w-full lg:text-lg lg:w-[90%]'>
-                        Every month, we run a competition between all the AI models submitted on a leaderboard. The best model will be featured and will earn tokens.
+                        Join us on our mission to to the moon & revolutionize open source AI development so that we can build a permissionless, democratized, and decentralized AI.
+                        Let the fate of AI be in our hands and not that of big tech companies.
                     </p>
 
-                    <div className='section5-animate'>
-                        <Button borderStyle='gradient' className='rounded-[95px] ' size='lg'>
-                            Read Whitepaper
-                        </Button>
+
+                    <div className='flex items-center gap-4 section5-animate'>
+                        <a href='#' className='text-white hover:opacity-80 transition-opacity'>
+                            <Image src='/telegram.webp' alt='twitter' width={100} height={100} className='w-10 h-auto ' />
+                        </a>
+                        <a href='#' className='text-white hover:opacity-80 transition-opacity'>
+                            <Image src='/twitter.webp' alt='x' width={100} height={100} className='w-10 h-auto ' />
+                        </a>
                     </div>
 
                 </div>

@@ -20,8 +20,6 @@ export const Hero = () => {
         ScrollTrigger.create({
             trigger: document.body,
 
-
-            
             start: 'top+=2%', 
             end: 'bottom bottom',
             onEnter: () => {

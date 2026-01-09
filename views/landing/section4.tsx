@@ -17,8 +17,6 @@ export const Section4 = () => {
             y: 60,
             opacity: 0,
             duration: 1,
-
-
             ease: 'power3.out',
             scrollTrigger: {
                 trigger: containerRef.current,

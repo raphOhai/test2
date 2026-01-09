@@ -75,7 +75,7 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
         onUpdate: (self) => {
 
           const scrollDistance = getScrollDistance()
-          const parallaxY = self.progress * scrollDistance * 0.60
+          const parallaxY = self.progress * scrollDistance * 0.8
           gsap.set(planetRef.current, {
             y: parallaxY
           })

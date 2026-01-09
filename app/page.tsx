@@ -14,6 +14,10 @@ export default function Page() {
             <Hero />
         </section>
 
+        <section className="snap-section pt-2 pb-8 flex items-center justify-center lg:snap-start lg:snap-always lg:h-[20rem] lg:py-0">
+            <Section2 />
+        </section>
+
         <section className="snap-section py-8 flex items-center justify-center lg:snap-start lg:snap-always lg:h-[50rem] lg:py-0">
             <HeroSection3 />
         </section>
@@ -23,9 +27,6 @@ export default function Page() {
         </section>
 
 
-        <section className="snap-section pt-2 pb-8 flex items-center justify-center lg:snap-start lg:snap-always lg:h-[50rem] lg:py-0">
-            <Section2 />
-        </section>
 
         <section className="snap-section py-8 flex items-center justify-center lg:snap-start lg:snap-always lg:h-[50rem] lg:py-0">
             <Section5 />

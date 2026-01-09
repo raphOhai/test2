@@ -87,6 +87,13 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
             })
           }
 
+          if (redGradientRef.current) {
+            const parallaxYRed = self.progress * scrollDistance * 0.60
+            gsap.set(redGradientRef.current, {
+              y: parallaxYRed
+            })
+          }
+
           const heroTitle = document.getElementById('hero-title') as HTMLElement
           if (heroTitle) {
 
@@ -160,7 +167,7 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <div ref={blueGradientRef} className='hidden lg:block absolute top-0 left-20'>
         <BlueGradient />
       </div>
-      <div ref={redGradientRef} className='fixed pointer-events-none bottom-[-100px] left-[-20%] scale-90'>
+      <div ref={redGradientRef} className='hidden lg:block rotate-90  absolute pointer-events-none bottom-[-100px] left-[-20%] scale-90'>
         <RedGradinet />
       </div>
 

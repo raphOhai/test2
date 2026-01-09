@@ -27,11 +27,12 @@ export const Section2 = () => {
             gsap.to(logosRef.current, {
                 x: -scrollAmount,
                 ease: 'none',
+                force3D: true,
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: 'top 120%', 
-                    end: 'bottom 20%', 
-                    scrub: 3, 
+                    end: '+=300%', 
+                    scrub: 1, 
                     pin: false,
                     invalidateOnRefresh: true,
                     markers: false,

@@ -6,7 +6,7 @@ import { Send, X } from 'lucide-react'
 export const Footer = () => {
     return (
         <div
-            className='min-h-screen relative flex flex-col lg:h-screen'
+            className='min-h-screen relative flex flex-col lg:h-screen bg-[linear-gradient(to_bottom,#000000_0%,#191E2A_40%,#191E2A_100%)]'
         >
             <div className='flex-1 flex items-center justify-center z-10 py-8 lg:py-0'>
                 <h2 className='text-white text-2xl font-semibold text-center px-4 lg:text-4xl lg:px-0'>

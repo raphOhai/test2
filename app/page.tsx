@@ -28,8 +28,11 @@ export default function Page() {
 
 
 
-        <section className="snap-section py-8 flex items-center justify-center lg:snap-start lg:snap-always lg:h-[50rem] lg:py-0">
+        <section className="snap-section py-8 flex items-center justify-center lg:snap-start lg:snap-always lg:h-[50rem] lg:py-0 ">
             <Section5 />
         </section>
     </div>;
 }   
+
+
+// bg-[linear-gradient(to_bottom,#000000_0%,#191E2A_40%,#191E2A_100%)]

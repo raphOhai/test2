@@ -71,10 +71,10 @@ export const Section5 = () => {
 
                     <div className='flex items-center gap-4 section5-animate'>
                         <a href='#' className='text-white hover:opacity-80 transition-opacity'>
-                            <Image src='/telegram.webp' alt='twitter' width={100} height={100} className='w-10 h-auto ' />
+                            <Image src='/telegram.webp' alt='twitter' width={100} height={100} className='w-6 h-6  ' />
                         </a>
                         <a href='#' className='text-white hover:opacity-80 transition-opacity'>
-                            <Image src='/twitter.webp' alt='x' width={100} height={100} className='w-10 h-auto ' />
+                            <Image src='/twitter.webp' alt='x' width={100} height={100} className='w-6 h-6 ' />
                         </a>
                     </div>
 

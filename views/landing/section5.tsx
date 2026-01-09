@@ -28,6 +28,10 @@ export const Section5 = () => {
     useEffect(() => {
         if (!moonRef.current) return
 
+        // Disable moon parallax animation on mobile (below lg breakpoint - 1024px)
+        const isMobile = window.innerWidth < 1024
+        if (isMobile) return
+
         ScrollTrigger.create({
             trigger: moonRef.current,
             start: 'top bottom',
@@ -43,6 +47,10 @@ export const Section5 = () => {
         })
 
         if (shootingStarRef.current && containerRef.current) {
+            // Disable shooting star animation on mobile (below lg breakpoint - 1024px)
+            const isMobile = window.innerWidth < 1024
+            if (isMobile) return
+
             const viewportHeight = window.innerHeight
             const viewportWidth = window.innerWidth
 
@@ -71,7 +79,7 @@ export const Section5 = () => {
                     tl.to(shootingStarRef.current, {
                         x: endX,
                         y: endY,
-                        duration: 2,
+                        duration: 1,
                         ease: 'power2.in',
                         rotation: 10,
                     })
@@ -92,17 +100,17 @@ export const Section5 = () => {
 
     return (
         <div ref={containerRef} className='align-center relative'>
-            <div className='grid grid-cols-2 gap-4'>
+            <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4'>
                  <div ref={shootingStarRef} className='pointer-events-none absolute top-0 left-0 z-10'>
-                    <Image src='/shootingStar.webp' alt='section5' width={500} height={500} />
+                    <Image src='/shootingStar.webp' alt='section5' width={500} height={500} className='w-32 h-32 lg:w-auto lg:h-auto' />
                  </div>
 
-                <div className='flex flex-col gap-4 mt-30'>
-                    <h1 className='section5-animate text-[45px] font-bold text-white text-start leading-[110%]'>
+                <div className='flex flex-col gap-3 mt-8 lg:gap-4 lg:mt-30'>
+                    <h1 className='section5-animate text-[24px] font-bold text-white text-start leading-[120%] lg:text-[45px] lg:leading-[110%]'>
                         Text here
                     </h1>
 
-                    <p className='section5-animate text-lg font-400 text-white text-start w-[90%]'>
+                    <p className='section5-animate text-sm font-400 text-white text-start w-full lg:text-lg lg:w-[90%]'>
                         Every month, we run a competition between all the AI models submitted on a leaderboard. The best model will be featured and will earn tokens.
                     </p>
 
@@ -114,7 +122,7 @@ export const Section5 = () => {
 
                 </div>
 
-                <div ref={moonRef} className='flex justify-end'>
+                <div ref={moonRef} className='flex justify-center lg:justify-end'>
                     <Image src='/moon.webp' alt='section5' width={500} height={500} />
                 </div>
 

@@ -20,7 +20,6 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const rafIdRef = useRef<number | null>(null)
 
   useEffect(() => {
-    // Initialize Lenis with smooth scroll settings
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -34,8 +33,6 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
 
     lenisRef.current = lenis
 
-    // Integrate Lenis with ScrollTrigger - this will be called in the raf loop
-    // Animation loop for Lenis
     function raf(time: number) {
       lenis.raf(time)
       ScrollTrigger.update()
@@ -44,7 +41,6 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
 
     rafIdRef.current = requestAnimationFrame(raf)
 
-    // Setup ScrollTrigger with Lenis integration
     if (planetRef.current) {
 
       ScrollTrigger.scrollerProxy(document.body, {
@@ -147,8 +143,6 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
         }
       })
     }
-
-    // Cleanup
     return () => {
       if (rafIdRef.current !== null) {
         cancelAnimationFrame(rafIdRef.current)
@@ -162,18 +156,18 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   }, [])
 
   return (
-    <div className='position-relative overflow-x-hidden'>
-      <div ref={blueGradientRef} className='absolute top-0 left-20 '>
+    <div className='position-relative overflow-hidden lg:overflow-x-hidden'>
+      <div ref={blueGradientRef} className='hidden lg:block absolute top-0 left-20'>
         <BlueGradient />
       </div>
-      <div ref={redGradientRef} className='fixed pointer-events-none bottom-[-100px] left-[-20%] scale-90' >
+      <div ref={redGradientRef} className='hidden lg:block fixed pointer-events-none bottom-[-100px] left-[-20%] scale-90'>
         <RedGradinet />
       </div>
 
-      <div ref={planetRef} className='absolute top-0 right-[-10px] pointer-events-none' style={{ transform: 'translateZ(0)' }}>
+      <div ref={planetRef} className='absolute top-0 right-[-1px] pointer-events-none overflow-hidden lg:right-[-10px] lg:overflow-visible' style={{ transform: 'translateZ(0)' }}>
         <Image src='/planet2.webp' alt='footer' width={700} height={700} />
       </div>
-      <div className='max-w-7xl mx-auto relative z-10'>
+      <div className='max-w-7xl mx-auto relative z-10 px-4 lg:px-0'>
         <Header />
         {children}
       </div>

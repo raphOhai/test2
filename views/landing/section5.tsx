@@ -78,7 +78,6 @@ export const Section5 = () => {
             ScrollTrigger.create({
                 trigger: containerRef.current,
                 start: 'top 80%',
-                end: 'top 20%',
                 onEnter: () => {
                     const tl = gsap.timeline()
 
@@ -88,12 +87,15 @@ export const Section5 = () => {
                         duration: 1,
                         ease: 'power2.in',
                         rotation: 10,
-                    })
-                        .to(shootingStarRef.current, {
+                    }).to(
+                        shootingStarRef.current,
+                        {
                             opacity: 0,
                             duration: 0.8,
                             ease: 'power2.out',
-                        }, '-=0.1')
+                        },
+                        '-=0.1'
+                    )
                 },
                 once: true,
             })
@@ -106,11 +108,20 @@ export const Section5 = () => {
 
     return (
         <div ref={containerRef} className='align-center relative'>
-            <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4'>
-                <div ref={shootingStarRef} className='pointer-events-none absolute top-[-100px] left-0 z-10'>
-                    <Image src='/shootingStar.webp' alt='section5' width={500} height={500} className='w-32 h-32 lg:w-auto lg:h-auto' />
+            {/* Shooting star is rendered in a fixed, overflow-hidden layer so it doesn't affect page scroll */}
+            <div className='pointer-events-none fixed inset-0 z-10 overflow-hidden'>
+                <div ref={shootingStarRef} className='absolute top-[-100px] left-0'>
+                    <Image
+                        src='/shootingStar.webp'
+                        alt='section5'
+                        width={500}
+                        height={500}
+                        className='w-32 h-32 lg:w-auto lg:h-auto'
+                    />
                 </div>
+            </div>
 
+            <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4'>
                 <div className='flex flex-col gap-3 lg:gap-4 lg:mt-30'>
                     <h1 className='section5-animate text-[24px] font-bold text-white text-start leading-[120%] lg:text-[45px] lg:leading-[110%]'>
                         Join our community

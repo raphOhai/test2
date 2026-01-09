@@ -12,7 +12,6 @@ export const Header = () => {
                     Buy salt ai
                 </Button>
             </div>
-
         </div>
     )
 }

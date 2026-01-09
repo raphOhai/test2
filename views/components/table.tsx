@@ -150,7 +150,7 @@ export const LeaderboardTable = () => {
                         <TableHead className='text-[10px] md:text-[10px] whitespace-nowrap text-[#8F99B0] '>TruthfulQA</TableHead>
                         <TableHead className='text-[10px] md:text-[10px] whitespace-nowrap text-[#8F99B0] '>Winogrande</TableHead>
                         <TableHead className='text-[10px] md:text-[10px] whitespace-nowrap text-[#8F99B0] '>GSM8K</TableHead>
-                        <TableHead className='text-[10px] md:text-[16px] whitespace-nowrap text-[#8F99B0] '>Usage</TableHead>
+                        <TableHead className='text-[10px] md:text-[10px] whitespace-nowrap text-[#8F99B0] '>Usage</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>

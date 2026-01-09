@@ -98,7 +98,7 @@ export const Section2 = () => {
                     />
 
                     <Image
-                        src='/logos/solana.webp'
+                        src='/logos/red.webp'
                         alt='project4'
                         width={500}
                         height={500}
@@ -112,7 +112,7 @@ export const Section2 = () => {
                                 className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
                     />
                     <Image
-                        src='/logos/Group.webp'
+                        src='/telegram.webp'
                         alt='project2'
                         width={500}
                         height={500}

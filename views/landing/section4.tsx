@@ -17,6 +17,8 @@ export const Section4 = () => {
             y: 60,
             opacity: 0,
             duration: 1,
+
+
             ease: 'power3.out',
             scrollTrigger: {
                 trigger: containerRef.current,
@@ -37,6 +39,8 @@ export const Section4 = () => {
                     <h1 className='text-[24px] font-bold text-white text-start leading-[120%] lg:text-[45px] lg:leading-[110%]'>
                         LLM Leaderboard
                     </h1>
+
+
 
                     <div className="hidden lg:flex lg:justify-end">
                         <div>

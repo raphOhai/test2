@@ -29,9 +29,9 @@ export const Section2 = () => {
                 ease: 'none',
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 80%', 
+                    start: 'top 120%', 
                     end: 'bottom 20%', 
-                    scrub: 1, 
+                    scrub: 3, 
                     pin: false,
                     invalidateOnRefresh: true,
                     markers: false,
@@ -44,139 +44,70 @@ export const Section2 = () => {
         }
     }, [])
     return (
-        <div ref={containerRef} className=''>
-            <h1 className='text-[20px] font-bold text-white leading-[120%] text-center lg:text-[30px] lg:leading-[110%]'>
+        <div ref={containerRef} className='align-center w-full px-4 sm:px-0'>
+            <h1 className='text-[18px] font-bold text-white leading-[130%] text-center sm:text-[20px] sm:leading-[125%] lg:text-[30px] lg:leading-[110%]'>
                 Projects integrated into the Arrakis AI Ecosystem
             </h1>
             <div className='relative overflow-hidden mt-4 lg:mt-0'>
                 <div ref={logosRef} className='flex gap-3 px-2 lg:gap-6 lg:px-4'>
-                    <Image
+                    <img
                         src='/logos/Frame.webp'
                         alt='project1'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
+              
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-64 md:h-64 object-contain flex-shrink-0'
                     />
-                    <Image
+                    <img
                         src='/logos/Group.webp'
                         alt='project2'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
+    
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-64 md:h-64 object-contain flex-shrink-0'
                     />
-                    <Image
-                        src='/logos/red.webp'
-                        alt='project3'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
-                    />
-                    <Image
+           
+                    <img
                         src='/logos/solana.webp'
                         alt='project4'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
+                   
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-64 md:h-64 object-contain flex-shrink-0'
                     />
-                    <Image
+                    <img
                         src='/logos/Frame.webp'
                         alt='project1'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
+                  
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-64 md:h-64 object-contain flex-shrink-0'
                     />
-                    <Image
+                    <img
                         src='/logos/Group.webp'
                         alt='project2'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
+                
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-64 md:h-64 object-contain flex-shrink-0'
                     />
-                    <Image
-                        src='/logos/red.webp'
-                        alt='project3'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
-                    />
-                    <Image
+        
+                    <img
                         src='/logos/solana.webp'
                         alt='project4'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
+                     
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-64 md:h-64 object-contain flex-shrink-0'
                     />
 
-                    <Image
+                    <img
                         src='/logos/solana.webp'
                         alt='project4'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
+                    
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-64 md:h-64 object-contain flex-shrink-0'
                     />
-                    <Image
+                    <img
                         src='/logos/Frame.webp'
                         alt='project1'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
+                  
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-64 md:h-64 object-contain flex-shrink-0'
                     />
-                    <Image
+                    <img
                         src='/logos/Group.webp'
                         alt='project2'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
+                  
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-64 md:h-64 object-contain flex-shrink-0'
                     />
-                    <Image
-                        src='/logos/red.webp'
-                        alt='project3'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
-                    />
-                    <Image
-                        src='/logos/solana.webp'
-                        alt='project4'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
-                    />
-                    <Image
-                        src='/logos/solana.webp'
-                        alt='project4'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
-                    />
-                    <Image
-                        src='/logos/Frame.webp'
-                        alt='project1'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
-                    />
-                    <Image
-                        src='/logos/Group.webp'
-                        alt='project2'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
-                    />
-                    <Image
-                        src='/logos/red.webp'
-                        alt='project3'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
-                    />
-                    <Image
-                        src='/logos/solana.webp'
-                        alt='project4'
-                        width={80}
-                        height={80}
-                        className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain flex-shrink-0'
-                    />
+             
                 </div>
             </div>
         </div>

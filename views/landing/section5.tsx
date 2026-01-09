@@ -28,18 +28,22 @@ export const Section5 = () => {
     useEffect(() => {
         if (!moonRef.current) return
 
-        // Disable moon parallax animation on mobile (below lg breakpoint - 1024px)
         const isMobile = window.innerWidth < 1024
         if (isMobile) return
 
+
+
+
         ScrollTrigger.create({
             trigger: moonRef.current,
-            start: 'top bottom',
+            start: 'top 120%',
             end: 'bottom top',
-            scrub: 3,
+            scrub: 8,
             invalidateOnRefresh: true,
             onUpdate: (self) => {
-                const parallaxY = self.progress * 400
+                const maxDistance = 300
+                const parallaxY = self.progress * maxDistance
+
                 gsap.set(moonRef.current, {
                     y: parallaxY
                 })
@@ -47,7 +51,6 @@ export const Section5 = () => {
         })
 
         if (shootingStarRef.current && containerRef.current) {
-            // Disable shooting star animation on mobile (below lg breakpoint - 1024px)
             const isMobile = window.innerWidth < 1024
             if (isMobile) return
 
@@ -105,7 +108,7 @@ export const Section5 = () => {
                     <Image src='/shootingStar.webp' alt='section5' width={500} height={500} className='w-32 h-32 lg:w-auto lg:h-auto' />
                 </div>
 
-                <div className='flex flex-col gap-3 mt-8 lg:gap-4 lg:mt-30'>
+                <div className='flex flex-col gap-3 lg:gap-4 lg:mt-30'>
                     <h1 className='section5-animate text-[24px] font-bold text-white text-start leading-[120%] lg:text-[45px] lg:leading-[110%]'>
                         Join our community
                     </h1>

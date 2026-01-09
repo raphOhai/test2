@@ -17,23 +17,30 @@ export const HeroSection3 = () => {
     })
 
     return (
-        <div ref={containerRef} className='w-full space-y-3 lg:w-[70%] lg:space-y-4 '>
-            <div></div>
-            <h2 className='section3-animate text-[24px] font-bold text-white text-start leading-[120%] lg:text-[45px] lg:leading-[110%]'>
-                Crowdsourcing our collective intelligence to build the best AI
-            </h2>
-            <p className='section3-animate text-sm font-400 text-white text-start lg:text-lg'>
-                Open source AI has been lagging behind the likes of Google and OpenAI by billions of dollars.
-            </p>
-            <p className='section3-animate text-sm font-400 text-white text-start lg:text-lg'>
-                Salt aims to solve that by rewarding open source developers who contribute to the democratization of AI. We run competitions between AI models to find and reward the best AI models. As a result, our users will be able to access the latest cutting edge AI models.
-            </p>
+        <div ref={containerRef} className='w-full grid grid-cols-12 gap-4'>
+            <div className='col-span-12 lg:col-span-8 space-y-3  lg:space-y-4 '>
+                <h2 className='section3-animate text-[24px] font-bold text-white text-start leading-[120%] lg:text-[45px] lg:leading-[110%]'>
+                    Crowdsourcing our collective intelligence to build the best AI
+                </h2>
+                <p className='section3-animate text-sm font-400 text-white text-start lg:text-lg'>
+                    Open source AI has been lagging behind the likes of Google and OpenAI by billions of dollars.
+                </p>
+                <p className='section3-animate text-sm font-400 text-white text-start lg:text-lg'>
+                    Salt aims to solve that by rewarding open source developers who contribute to the democratization of AI. We run competitions between AI models to find and reward the best AI models. As a result, our users will be able to access the latest cutting edge AI models.
+                </p>
 
-            <div className='section3-animate'>
-                <Button borderStyle='gradient' size='lg' className='rounded-[95px] py-2 px-4 lg:py-3 lg:px-8'>
-                    Use The Cutting Edge AI
-                </Button>
+                <div className='section3-animate'>
+                    <Button borderStyle='gradient' size='lg' className='rounded-[95px] py-2 px-4 lg:py-3 lg:px-8'>
+                        Use The Cutting Edge AI
+                    </Button>
+                </div>
+
             </div>
+
+            <div className='col-span-12 lg:col-span-4'>
+            
+            </div>
+
 
         </div>
     )

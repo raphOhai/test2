@@ -33,10 +33,10 @@ export const Section4 = () => {
     }, [])
 
     return (
-        <div ref={containerRef} className='flex flex-col gap-3 lg:gap-4 '>
+        <div ref={containerRef} className='flex flex-col gap-3 lg:gap-4 w-full px-4 sm:px-0'>
             <div className="flex flex-col gap-3 lg:gap-4">
                 <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-4">
-                    <h1 className='text-[24px] font-bold text-white text-start leading-[120%] lg:text-[45px] lg:leading-[110%]'>
+                    <h1 className='text-[20px] font-bold text-white text-center leading-[130%] sm:text-[24px] sm:leading-[120%] lg:text-[45px] lg:leading-[110%] lg:text-start'>
                         LLM Leaderboard
                     </h1>
 
@@ -51,13 +51,15 @@ export const Section4 = () => {
                     </div>
 
                 </div>
-                <p className='text-sm font-400 text-white text-start w-full lg:text-lg lg:w-[90%]'>
+                <p className='text-sm font-400 text-white text-center sm:text-start w-full lg:text-lg lg:w-[90%]'>
                     We evaluate LLMs on key benchmarks using the Eleuther AI, a framework to test LLMs on a large number of different evaluation tasks.
                     The higher the score, the better the LLM.
                 </p>
 
             </div>
-            <LeaderboardTable />
+            <div className='-mx-4 sm:mx-0'>
+                <LeaderboardTable />
+            </div>
         </div>
     )
 }

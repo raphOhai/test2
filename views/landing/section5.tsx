@@ -27,11 +27,8 @@ export const Section5 = () => {
 
     useEffect(() => {
         if (!moonRef.current) return
-
         const isMobile = window.innerWidth < 1024
         if (isMobile) return
-
-
 
 
         ScrollTrigger.create({
@@ -44,8 +41,14 @@ export const Section5 = () => {
                 const maxDistance = 300
                 const parallaxY = self.progress * maxDistance
 
+                const minScale = 0.6
+                const maxScale = 1
+                const scale = minScale + (maxScale - minScale) * self.progress
+
                 gsap.set(moonRef.current, {
-                    y: parallaxY
+                    y: parallaxY,
+                    scale: scale,
+                    transformOrigin: '50% 50%',
                 })
             },
         })

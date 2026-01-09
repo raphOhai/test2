@@ -61,7 +61,7 @@ export const Hero = () => {
                 </Button>
             </div>
 
-            <div className='grid grid-cols-1 gap-4 mt-12 lg:grid-cols-12 lg:mt-20'>
+            <div className='grid grid-cols-1 gap-3 sm:gap-4 md:gap-5 mt-12 sm:mt-16 lg:grid-cols-12 lg:mt-20'>
                 <div className='lg:col-span-4 opacity-0' ref={(el) => { if (el && !pillsRef.current.includes(el)) pillsRef.current.push(el) }}>
                     <StatsPill title='LLM models' value='1,873' />
                 </div>
@@ -78,11 +78,11 @@ export const Hero = () => {
 
 const StatsPill = ({ title, value }: { title: string, value: string }) => {
     return (
-        <div className='rounded-[95px] px-4 py-3 flex flex-col gap-1 align-center justify-center bg-gradient-to-r from-[#B53EA4]/20 via-[#FC6F32]/20 to-[#FF4A59]/20 lg:px-8 lg:py-4'>
-            <p className='text-[28px] font-bold text-white text-center lg:text-[45px]'>
+        <div className='rounded-[40px] sm:rounded-[60px] lg:rounded-[95px] px-4 py-3 sm:px-6 sm:py-4 md:px-7 md:py-5 lg:px-8 lg:py-4 flex flex-col gap-1 sm:gap-1.5 md:gap-2 items-center justify-center bg-gradient-to-r from-[#B53EA4]/20 via-[#FC6F32]/20 to-[#FF4A59]/20 w-full'>
+            <p className='text-[28px] sm:text-[32px] md:text-[38px] lg:text-[45px] font-bold text-white text-center leading-[1.1] sm:leading-[1.15]'>
                 {value}
             </p>
-            <p className='text-[13px] font-400 text-white text-center lg:text-[15px]'>
+            <p className='text-[13px] sm:text-[14px] md:text-[14px] lg:text-[15px] font-400 text-white text-center leading-normal px-1 sm:whitespace-nowrap'>
                 {title}
             </p>
         </div>

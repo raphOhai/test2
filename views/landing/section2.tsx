@@ -46,7 +46,7 @@ export const Section2 = () => {
     }, [])
     return (
         <div ref={containerRef} className='align-center w-full sm:px-0 flex flex-col items-center justify-center gap-3 lg:gap-10'>
-            <h1 className='text-[18px] font-semibold text-white leading-[130%] text-center sm:text-[20px] sm:leading-[125%] lg:text-[40px] lg:leading-[110%]'>
+            <h1 className='text-white text-2xl font-semibold text-center px-4 lg:text-4xl lg:px-0'>
                 Projects integrated into the Arrakis AI Ecosystem
             </h1>
             <div className='relative overflow-hidden'>
@@ -107,6 +107,21 @@ export const Section2 = () => {
 
 
 <Image
+                        src='/logos/Frame.webp'
+                        alt='project1'
+                        width={500}
+                        height={500}
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                    />
+                    <Image
+                        src='/logos/Group.webp'
+                        alt='project2'
+                        width={500}
+                        height={500}
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                    />
+
+                    <Image
                         src='/logos/solana.webp'
                         alt='project4'
                         width={500}
@@ -144,7 +159,6 @@ export const Section2 = () => {
                         height={500}
                         className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
                     />
-
 
                     
                     {/* having issues with the aspect ratio of the image will escalate to the design team for now we hide on mobile */}

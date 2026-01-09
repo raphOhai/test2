@@ -137,8 +137,8 @@ export const LeaderboardTable = () => {
     }
 
     return (
-        <div className='inline-block min-w-full align-middle  md:px-0'>
-            <Table className='text-base'>
+        <div className='inline-block min-w-full align-middle w-full md:px-0'>
+            <Table className='text-base w-full'>
                 <TableHeader className='bg-transparent border-none'>
                     <TableRow className='border-none hover:!bg-transparent'>
                         <TableHead className='text-[10px] md:text-[10px] whitespace-nowrap text-[#8F99B0]   '></TableHead>

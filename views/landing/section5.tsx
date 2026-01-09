@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 export const Section5 = () => {
     const moonRef = useRef<HTMLDivElement>(null)
-    const shootingStarRef = useRef<HTMLDivElement>(null)
     const containerRef = useScrollAnimation({
         selector: '.section5-animate',
         y: 40,
@@ -53,54 +52,6 @@ export const Section5 = () => {
             },
         })
 
-        if (shootingStarRef.current && containerRef.current) {
-            const isMobile = window.innerWidth < 1024
-            if (isMobile) return
-
-            const viewportHeight = window.innerHeight
-            const viewportWidth = window.innerWidth
-
-
-            const horizontalDistance = viewportHeight
-            const endX = viewportWidth * 0.7
-            const endY = viewportHeight * 0.9
-
-            const startX = -750
-            const startY = -750;
-
-            gsap.set(shootingStarRef.current, {
-                x: startX,
-                y: startY,
-                rotation: 10,
-                opacity: 1,
-            })
-
-            ScrollTrigger.create({
-                trigger: containerRef.current,
-                start: 'top 80%',
-                onEnter: () => {
-                    const tl = gsap.timeline()
-
-                    tl.to(shootingStarRef.current, {
-                        x: endX,
-                        y: endY,
-                        duration: 1,
-                        ease: 'power2.in',
-                        rotation: 10,
-                    }).to(
-                        shootingStarRef.current,
-                        {
-                            opacity: 0,
-                            duration: 0.8,
-                            ease: 'power2.out',
-                        },
-                        '-=0.1'
-                    )
-                },
-                once: true,
-            })
-        }
-
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill())
         }
@@ -108,19 +59,6 @@ export const Section5 = () => {
 
     return (
         <div ref={containerRef} className='align-center relative'>
-            {/* Shooting star is rendered in a fixed, overflow-hidden layer so it doesn't affect page scroll */}
-            <div className='pointer-events-none fixed inset-0 z-10 overflow-hidden'>
-                <div ref={shootingStarRef} className='absolute top-[-100px] left-0'>
-                    <Image
-                        src='/shootingStar.webp'
-                        alt='section5'
-                        width={500}
-                        height={500}
-                        className='w-32 h-32 lg:w-auto lg:h-auto'
-                    />
-                </div>
-            </div>
-
             <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4'>
                 <div className='flex flex-col gap-3 lg:gap-4 lg:mt-30'>
                     <h1 className='section5-animate text-[24px] font-bold text-white text-start leading-[120%] lg:text-[45px] lg:leading-[110%]'>

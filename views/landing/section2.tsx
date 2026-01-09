@@ -50,18 +50,18 @@ export const Section2 = () => {
                 Projects integrated into the Arrakis AI Ecosystem
             </h1>
             <div className='relative overflow-hidden'>
-                <div ref={logosRef} className='flex gap-3 px-2 lg:gap-3 lg:px-4'>
+                <div ref={logosRef} className='flex gap-3 px-2 lg:gap-2 lg:px-4'>
                     <Image
                         src='/logos/Frame.webp'
                         alt='project1'
-                        width={500  }
+                        width={500}
                         height={500}
                         className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
                     />
                     <Image
                         src='/logos/Group.webp'
                         alt='project2'
-                                width={500}
+                        width={500}
                         height={500}
                         className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
                     />
@@ -86,7 +86,7 @@ export const Section2 = () => {
                         alt='project2'
                         width={500}
                         height={500}
-                            className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
                     />
 
                     <Image
@@ -96,27 +96,28 @@ export const Section2 = () => {
                         height={500}
                         className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
                     />
-
+                    {/* having issues with the aspect ratio of the image will escalate to the design team */}
                     <Image
                         src='/logos/red.webp'
                         alt='project4'
                         width={500}
                         height={500}
-                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0 hidden lg:block'
                     />
                     <Image
                         src='/logos/Frame.webp'
                         alt='project1'
                         width={500}
                         height={500}
-                                className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
                     />
+                    {/* having issues with the aspect ratio of the image will escalate to the design team */}
                     <Image
                         src='/telegram.webp'
                         alt='project2'
                         width={500}
                         height={500}
-                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0 hidden lg:block'
                     />
 
                 </div>

@@ -10,7 +10,6 @@ interface UsePulsingGlowOptions {
 }
 
 /**
- * Reusable hook for creating a pulsing glow animation
  * @param options - Animation configuration options
  * @returns Ref object to attach to the element you want to animate
  */
@@ -29,6 +28,10 @@ export const usePulsingGlow = <T extends HTMLElement | SVGGElement>(
 
   useEffect(() => {
     if (!glowRef.current || !enabled) return
+
+    // Disable pulsing glow animation on mobile (below lg breakpoint - 1024px)
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024
+    if (isMobile) return
 
     gsap.set(glowRef.current, { opacity: minOpacity })
     

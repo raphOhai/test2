@@ -30,7 +30,7 @@ export const Section2 = () => {
                 force3D: true,
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 120%',
+                    start: 'top 90%',
                     end: '+=300%',
                     scrub: 1,
                     pin: false,
@@ -96,14 +96,7 @@ export const Section2 = () => {
                         height={500}
                         className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
                     />
-                    {/* having issues with the aspect ratio of the image will escalate to the design team */}
-                    <Image
-                        src='/logos/red.webp'
-                        alt='project4'
-                        width={500}
-                        height={500}
-                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0 hidden lg:block'
-                    />
+
                     <Image
                         src='/logos/Frame.webp'
                         alt='project1'
@@ -111,7 +104,50 @@ export const Section2 = () => {
                         height={500}
                         className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
                     />
-                    {/* having issues with the aspect ratio of the image will escalate to the design team */}
+
+
+<Image
+                        src='/logos/solana.webp'
+                        alt='project4'
+                        width={500}
+                        height={500}
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                    />
+                    <Image
+                        src='/logos/Frame.webp'
+                        alt='project1'
+                        width={500}
+                        height={500}
+
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                    />
+                    <Image
+                        src='/logos/Group.webp'
+                        alt='project2'
+                        width={500}
+                        height={500}
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                    />
+
+                    <Image
+                        src='/logos/solana.webp'
+                        alt='project4'
+                        width={500}
+                        height={500}
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                    />
+
+                    <Image
+                        src='/logos/Frame.webp'
+                        alt='project1'
+                        width={500}
+                        height={500}
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0'
+                    />
+
+
+                    
+                    {/* having issues with the aspect ratio of the image will escalate to the design team for now we hide on mobile */}
                     <Image
                         src='/telegram.webp'
                         alt='project2'
@@ -119,6 +155,16 @@ export const Section2 = () => {
                         height={500}
                         className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0 hidden lg:block'
                     />
+
+                    {/* having issues with the aspect ratio of the image will escalate to the design team for now we hide on mobile */}
+                    <Image
+                        src='/logos/red.webp'
+                        alt='project4'
+                        width={500}
+                        height={500}
+                        className='w-20 h-20 sm:w-20 sm:h-20 md:w-[420px] md:h-[58px] object-contain flex-shrink-0 hidden lg:block'
+                    />
+                    
 
                 </div>
             </div>

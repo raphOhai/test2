@@ -7,7 +7,6 @@ export const Header = () => {
                 <Button variant='link'>
                     How it Works
                 </Button>
-
                 <Button borderStyle='gradient' className='rounded-[95px]'  >
                     Buy salt ai
                 </Button>

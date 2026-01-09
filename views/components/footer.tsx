@@ -1,7 +1,5 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import React from 'react'
-import { Send, X } from 'lucide-react'
 
 export const Footer = () => {
     return (

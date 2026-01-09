@@ -137,30 +137,33 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
             })
 
             const gradientString = `linear-gradient(45deg, ${interpolatedColors.join(', ')})`
-            const isDesktop = window.innerWidth >= 1024
-            const scale = isDesktop ? (1 - (transitionFactor * 0.09)) : 1 
-            
             gsap.set(heroTitle, {
               backgroundImage: gradientString,
-              scale: scale,
-              transformOrigin: isDesktop ? 'left center' : 'center center',
-              force3D: true,
-              immediateRender: false,
-              ease: 'easeInOut',
+              immediateRender: false
             })
-
-            if (isDesktop) {
-              if (transitionFactor > 0) {
-                heroTitle.style.textAlign = 'start'
-              } else {
-                heroTitle.style.textAlign = ''
-              }
-            }
 
             if (!heroTitle.classList.contains('angle-gradient')) {
               heroTitle.classList.add('angle-gradient')
             }
             heroTitle.classList.remove('angle-gradient2')
+
+
+            const isDesktop = window.innerWidth >= 1024
+            if (isDesktop) {
+              const shouldScale = transitionFactor > 0
+              const hasScaleClass = heroTitle.classList.contains('scaleHeroTitle')
+              
+              if (shouldScale && !hasScaleClass) {
+                heroTitle.classList.add('scaleHeroTitle')
+                heroTitle.style.textAlign = 'start'
+
+                gsap.set(heroTitle, { clearProps: 'transform' })
+              } else if (!shouldScale && hasScaleClass) {
+                heroTitle.classList.remove('scaleHeroTitle')
+                heroTitle.style.textAlign = ''
+                gsap.set(heroTitle, { clearProps: 'transform' })
+              }
+            }
           }
         }
       })

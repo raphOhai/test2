@@ -43,16 +43,19 @@ export const useScrollAnimation = (
   useEffect(() => {
     if (!containerRef.current || !enabled) return
 
-    const elements = containerRef.current.querySelectorAll(selector)
+    // If no selector provided, animate the container itself
+    const targetElements = selector 
+      ? containerRef.current.querySelectorAll(selector)
+      : [containerRef.current]
 
-    if (elements.length === 0) return
+    if (targetElements.length === 0) return
 
-    const animation = gsap.from(elements, {
+    const animation = gsap.from(targetElements, {
       y,
       opacity,
       duration,
       ease,
-      stagger,
+      stagger: selector ? stagger : 0, // Only apply stagger if animating multiple child elements
       force3D,
       scrollTrigger: {
         trigger: containerRef.current,

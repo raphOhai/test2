@@ -10,14 +10,44 @@ gsap.registerPlugin(ScrollTrigger)
 export const Section2 = () => {
     const containerRef = useRef<HTMLDivElement>(null)
     const logosRef = useRef<HTMLDivElement>(null)
+    const titleRef = useRef<HTMLHeadingElement>(null)
+    const logosWrapperRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        if (!containerRef.current || !logosRef.current) return
+        if (!titleRef.current || !logosWrapperRef.current || !containerRef.current) return
 
+
+        gsap.from(titleRef.current, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: 'top 80%',
+                toggleActions: 'play none none reverse',
+            },
+        })
+
+
+        gsap.from(logosWrapperRef.current, {
+            y: 70,
+            opacity: 0,
+            duration: 1.2,
+            ease: 'power3.out',
+            delay: 0.15,
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: 'top 80%',
+                toggleActions: 'play none none reverse',
+            },
+        })
+
+
+        if (!logosRef.current) return
 
         setTimeout(() => {
-            if (!logosRef.current) return
-
+            if (!logosRef.current || !containerRef.current) return
 
             const logosWidth = logosRef.current.scrollWidth
             const containerWidth = containerRef.current?.offsetWidth || window.innerWidth
@@ -41,15 +71,19 @@ export const Section2 = () => {
         }, 100)
 
         return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+            ScrollTrigger.getAll().forEach(trigger => {
+                if (trigger.vars?.trigger === containerRef.current) {
+                    trigger.kill()
+                }
+            })
         }
-    }, [])
+    }, [containerRef])
     return (
         <div ref={containerRef} className='align-center w-full sm:px-0 flex flex-col items-center justify-center gap-3 lg:gap-10'>
-            <h1 className='text-white text-2xl font-semibold text-center px-4 lg:text-4xl lg:px-0'>
+            <h1 ref={titleRef} className='text-white text-2xl font-semibold text-center px-4 lg:text-4xl lg:px-0'>
                 Projects integrated into the Arrakis AI Ecosystem
             </h1>
-            <div className='relative overflow-hidden'>
+            <div ref={logosWrapperRef} className='relative overflow-hidden'>
                 <div ref={logosRef} className='flex gap-3 px-2 lg:gap-2 lg:px-4'>
                     <Image
                         src='/logos/Frame.webp'

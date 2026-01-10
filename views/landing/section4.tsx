@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
-import { LeaderboardTable } from '../components/table'
+import { LeaderboardTable } from '../../components/table'
 import { Button } from '@/components/ui/button'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'

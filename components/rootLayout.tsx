@@ -1,8 +1,8 @@
 "use client"
 import BlueGradient from '@/components/assets/blueGradient'
 import { RedGradinet } from '@/components/assets/redGradinet'
-import { Header } from '@/views/components/header'
-import { Footer } from '@/views/components/footer'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'

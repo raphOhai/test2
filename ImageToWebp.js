@@ -3,7 +3,7 @@ const path = require('path');
 const sharp = require('sharp');
 
 
-const SUPPORTED_FORMATS = ['.jpg', '.jpeg', '.webp', '.tiff', '.tif', '.bmp', '.gif'];
+const SUPPORTED_FORMATS = ['.jpg', '.jpeg', '.png', '.webp', '.tiff', '.tif', '.bmp', '.gif'];
 
 /**
  * @param {string} dir

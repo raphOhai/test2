@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   description: "We track, rank and pay for the best open source decentralized LLMs to compete against OpenAI. Join us on our mission to revolutionize open source AI development.",
   keywords: ["decentralized AI", "LLM", "open source", "artificial intelligence", "blockchain AI"],
   authors: [{ name: "Salt AI" }],
+  icons: {
+    icon: "/logo.webp",
+    shortcut: "/logo.webp",
+    apple: "/logo.webp",
+  },
   openGraph: {
     title: "Salt AI - A New Economic Primitive for Funding Decentralized AI",
     description: "We track, rank and pay for the best open source decentralized LLMs to compete against OpenAI.",

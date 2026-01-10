@@ -30,7 +30,7 @@ export const Section5 = () => {
 
         ScrollTrigger.create({
             trigger: moonRef.current,
-            start: 'top 120%',
+            start: 'top bottom',
             end: 'bottom top',
             scrub: 8,
             invalidateOnRefresh: true,
